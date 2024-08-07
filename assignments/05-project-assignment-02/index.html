@@ -2333,81 +2333,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Instructions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#part-1-define-the-system-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 1: Define the System Model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#part-2-optional-and-ungraded-plan-and-execute-the-manufacturing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 2 (Optional and Ungraded): Plan and Execute the Manufacturing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#part-3-optional-and-ungraded-assemble-your-prototype" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 3 (Optional and Ungraded): Assemble your prototype
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#part-4-improve-your-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 4: Improve your Model
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    <span class="md-ellipsis">
-      Submission
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Submission">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#report" class="md-nav__link">
-    <span class="md-ellipsis">
-      Report
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#video" class="md-nav__link">
-    <span class="md-ellipsis">
-      Video
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -2450,59 +2375,7 @@
 <p>This assignment may be completed and submitted as a group.  Please work with your group to complete all parts.</p>
 </blockquote>
 <h2 id="instructions">Instructions</h2>
-<h3 id="part-1-define-the-system-model">Part 1: Define the System Model</h3>
-<p>Produce a final dynamic model in Mujoco that adapts the exemplar robot notebooks shown in class to your final geometry, material properties (joint stiffness and beam stiffness), and actuator characteristics.  Ensure your model includes some aspect of material compliance / flexibility and motor behavior somewhere in your system, and that you have made it possible to vary at least one design parameter of interest.  Plot performance of the model in a way that can be correlated to a real-life experiment.</p>
-<h3 id="part-2-optional-and-ungraded-plan-and-execute-the-manufacturing">Part 2 <em>(Optional and Ungraded)</em>: Plan and Execute the Manufacturing</h3>
-<ol>
-<li>Based on one of the robots shared in class, define the mechanism that will be fabricated.  This may be done in tools like inkscape, autocad, or solidworks as a flat sketch, but the results should be a .dxf or .svg file, with colors indicating hinges, cuts and any other important geometry as color coded lines.  Please provide a legend for each color as you have defined it.</li>
-<li>Use the this file you created to extract joint lines and compute the multi-layer manufacturing process.</li>
-<li>Laser cut the geometry on each layer.</li>
-<li>Laminate the layers together</li>
-</ol>
-<h3 id="part-3-optional-and-ungraded-assemble-your-prototype">Part 3 <em>(Optional and Ungraded)</em>: Assemble your prototype</h3>
-<ol>
-<li>Assemble your robot's kinematics from </li>
-<li>Attach servos and test functionality.</li>
-<li>Connect ESP32 and program the gait</li>
-<li>Run the robot and record its behavior (qualitative) and performance(quantitative) as  a function of the metric you determined earlier.</li>
-</ol>
-<h3 id="part-4-improve-your-model">Part 4: Improve your Model</h3>
-<p>Using your <em>Mujoco Model</em>  <del>as-built prototype</del>, vary one or more design parameter(s) in your <em>model</em> <del>prototpye</del> to study the impact of changing it on your robot's performance.  </p>
-<ul>
-<li>This may require you to develop an XML template and regenerate your model programmatically as needed</li>
-<li>Select a metric that describes the performance of your robot.  This may be robot speed, overal distance traveled in a particular direction, efficiency, etc.</li>
-<li>
-<p>Add <code>&lt;site&gt;</code>/<code>&lt;sensor&gt;</code> elements as needed to track any additional variables necessary for computing robot performance. </p>
-<blockquote>
-<p>This isn't necessary for joint position / speed variables, which use the <code>qpos()</code> or <code>qvel()</code> methods for accessing them.</p>
-</blockquote>
-</li>
-<li>
-<p>Create a relatively granular sweep of your performance metric over the range of design variable(s) and plot  your results.</p>
-</li>
-<li>Select an approach to further maximize your selected performance metric. This may be an optimization / minimization function, or a (finer-grained) global approach.</li>
-</ul>
-<!-- Vary the same value in your MuJoCo Model.  How does performance change in your model?   -->
-
-<!-- Discuss any similarities or differences, qualitatively and quantitatively.  Attributev differences to any modeled or unmodeled differences between simulation and real-life.   -->
-
-<!-- Discuss how you would implement a similar experiment on the physical prototype to validate this result.  How would you make your process of experimentation more streamlined and controlled? -->
-
-<h2 id="submission">Submission</h2>
-<p>Your final project should follow the following steps; it should  do so in two formats: a report and video.</p>
-<ol>
-<li>Walk us through the jupyter notebook file you based your robot on. Include all assumptions or simplifications you made and differences you might reasonably expect from real-world conditions.</li>
-<li>Discuss the design variable(s) you decided to study and why.</li>
-<li>Discuss how you used global parameter sweep(s) and optimization to understand performance as a function of your selected design variable, and why you took that approach.</li>
-<li>Present your results and discuss, using your intuition, why you believe your  result aligns with what might be expected on the physical device or not.</li>
-</ol>
-<h3 id="report">Report</h3>
-<p>Your final report can be submitted as a final jupyter notebook file that mixes report text with modeling and coding.  Please focus on a detailed walkthrough of the steps you took and a thorough discussion.</p>
-<h3 id="video">Video</h3>
-<p>Your final video should walk us through all aspects of this assignment.  It can be in the form of a powerpoint video with narration mode on that you save as an .mp4.  </p>
-<ul>
-<li>It should be no longer than 5 minutes</li>
-</ul>
+<p><strong><em>This assignment is no longer released</em></strong></p>
 <h2 id="rubric">Rubric</h2>
 <table>
 <thead>
